@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage("Update ECS Service") {
             steps {
-                sh "ls -lah"
-                sh "python3 update-ecs-service.py ${params.region} ${params.cluster_name} ${params.service_name}"
+                sh "python3 ./update-ecs-service/update-ecs-service.py ${params.region} ${params.cluster_name} ${params.service_name}"
             }
         }
 
