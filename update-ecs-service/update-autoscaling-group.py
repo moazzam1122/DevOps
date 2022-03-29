@@ -1,9 +1,10 @@
+import sys
 import boto3
 ######### Enter All the variable values to run this scripts ##########
-region = input("Enter your Region: ") # variables getting input from user
-asg_name = input("Enter your AutoScaling Name: ")
-asg_minhealthy_percentage = int(input("Enter your MinHealthyPercentage for asg update : "))
-asg_instance_warmup = int(input("Enter your InstanceWarmup for asg update : "))
+region = sys.argv[1] # variables getting input from user
+asg_name = sys.argv[2]
+asg_minhealthy_percentage = int(sys.argv[3])
+asg_instance_warmup = int(sys.argv[4])
 #################################################################################
 
 client = boto3.client('autoscaling',region) # Initilizing boto3.client for Autoscaling service of AWS
