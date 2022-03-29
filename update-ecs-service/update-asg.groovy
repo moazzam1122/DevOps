@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage("Update ECS Service") {
             steps {
-                sh "python3 ./update-ecs-service/update-ecs-service.py ${params.region} ${params.asg_name} ${params.asg_minhealthy_percentage} ${params.asg_instance_warmup}"
+                sh "python3 ./update-ecs-service/update-autoscaling-group.py ${params.region} ${params.asg_name} ${params.asg_minhealthy_percentage} ${params.asg_instance_warmup}"
             }
         }
 
